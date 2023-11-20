@@ -1,38 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .App {
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-start; /* Align to the top */
+  align-items: center; /* Align horizontally */
   color: white;
+  padding: 20px; /* Add some padding around */
+  box-sizing: border-box; /* Include padding in width and height calculations */
 }
 
-.App-link {
-  color: #61dafb;
+.App-header {
+  margin-bottom: 50px; /* Add space between header and project containers */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.headshot {
+  width: 150px; /* Adjust size as needed */
+  height: 150px; /* Adjust size as needed */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the area without stretching */
+  margin-bottom: 20px; /* Adds space between the image and the name */
+}
+
+h1 {
+  font-size: 5rem; /* Adjust the size as needed */
+  margin: 0;
+  padding: 0;
+  /* animate fade in and out and move side to side */
+  animation: pulseGlow 2s ease-in-out infinite, moveSideToSide 2s ease-in-out infinite;
+}
+
+p {
+  font-size: 1.5rem; /* Adjust the size as needed */
+  margin: 0;
+  padding: 0;
+}
+
+.project-container {
+  display: flex;
+  justify-content: center; /* Centers projects horizontally */
+  align-items: flex-start; /* Aligns projects to the top */
+  flex-wrap: wrap; /* Allows wrapping if there's not enough space */
+  gap: 20px; /* Space between projects */
+  width: 100%;
+  max-width: 1200px; /* Maximum width of container */
+  padding: 0; /* Removes padding that could affect alignment */
+  list-style: none; /* In case you decide to use a list */
+}
+
+.project {
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 20px;
+  margin: 0; /* Ensures even margins */
+  flex: 0 0 calc(33.333% - 40px); /* No grow, no shrink, basis with space for margin */
+  height: 40vh; /* Example fixed height */
+  width: 30vh; /* Example fixed width */
+  max-width: 300px; /* Example max width */
+  max-height: 300px; /* Example max height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align content to the start */
+  text-align: left; /* Align text to the left */
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none; 
+  color: inherit;
+}
+
+.project-background {
+  width: 100%; /* Full width of the parent container */
+  height: 100%; /* Full height of the parent container */
+  object-fit: contain; /* Ensures the image fits within the container */
+  position: absolute; /* Absolutely position within the .project div */
+  top: 0;
+  left: 0;
+  z-index: 0; /* Behind the content */
+}
+
+.project-content {
+  position: relative;
+  z-index: 1; /* In front of the background */
+}
+
+.project:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.project h2 {
+  font-size: 1.5rem; /* or your desired size for the title */
+  margin-bottom: 0.5rem; /* Adds some space between the title and blurb */
+}
+
+.project p {
+  font-size: 1rem; /* or your desired size for the paragraph, smaller than the title */
+  margin-top: 0; /* Removes any default margin from the top of the paragraph */
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.bio {
+  max-width: 1000vh; /* Adjust as needed */
+  margin: 20px auto; /* Center it */
+  font-family: 'Courier New', Courier, monospace; /* Monospaced font for the typing effect */
+  white-space: pre-wrap; /* Ensures line breaks */
+}
+
+
+/* Keyframes for animations */
+@keyframes moveSideToSide {
+  0%,
+  100% {
+    transform: translateX(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateX(10px);
   }
 }
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Adjust the flex-basis within the media queries for responsiveness */
+@media (max-width: 1200px) {
+  .project {
+    width: 30vw; /* Smaller width on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .project {
+    width: 70vw; /* Full width on small screens */
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
+
