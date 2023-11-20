@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "normalize.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 
@@ -61,7 +62,7 @@ function App() {
           repeat={Infinity} // Repeat this animation
         />
       </div>
-      
+
       <main>
         <div className="project-container">
           {projects.map((project, index) => (
