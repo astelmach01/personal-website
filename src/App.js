@@ -61,6 +61,7 @@ function App() {
           repeat={Infinity} // Repeat this animation
         />
       </div>
+      
       <main>
         <div className="project-container">
           {projects.map((project, index) => (
