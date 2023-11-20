@@ -1,1 +1,1 @@
-Website is live [here](https://astelmach01.github.io/personal-website/)
+Website is live [here](https://www.andrew-stelmach.com/)
