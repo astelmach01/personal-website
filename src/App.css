@@ -53,6 +53,7 @@ p {
   width: 100%;
   max-width: 1200px; /* Maximum width of container */
   padding: 0; /* Removes padding that could affect alignment */
+  margin-bottom: 2rem;
   list-style: none; /* In case you decide to use a list */
 }
 
@@ -117,7 +118,6 @@ footer {
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
-
 }
 
 a {
