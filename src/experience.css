@@ -1,0 +1,22 @@
+.experience-section {
+  background-color: black; /* Match the background to the rest of the website */
+  color: white; /* Text color that contrasts with the background */
+  margin-top: 2rem; /* Space between the header and the section */
+}
+
+.position-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.company-list {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+}
+
+.company-list li {
+  margin-bottom: 0.3rem; /* Space between company names */
+  font-size: 1rem;
+  /* Optional: Use ::before to create custom bullets */
+  position: relative;
+}

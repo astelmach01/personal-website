@@ -5,10 +5,10 @@ body {
 }
 
 .App {
-  font-family: "Montserrat", sans-serif;
   text-align: center;
   background-color: black;
   min-height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Align to the top */
@@ -16,10 +16,8 @@ body {
   color: white;
   padding: 20px; /* Add some padding around */
   box-sizing: border-box; /* Include padding in width and height calculations */
-}
+  overflow: hidden;
 
-.App-header {
-  margin-bottom: 50px; /* Add space between header and project containers */
 }
 
 .headshot {
@@ -34,15 +32,19 @@ h1 {
   font-size: 5rem; /* Adjust the size as needed */
   margin: 0;
   padding: 0;
-  /* animate fade in and out and move side to side */
-  animation: pulseGlow 2s ease-in-out infinite,
-    moveSideToSide 2s ease-in-out infinite;
-}
+  }
 
 p {
   font-size: 1.5rem; /* Adjust the size as needed */
   margin: 0;
   padding: 0;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+
+.App-header, main, footer {
+  flex: 1; /* Distribute space evenly */
 }
 
 .project-container {
@@ -64,10 +66,6 @@ p {
   padding: 20px;
   margin: 0; /* Ensures even margins */
   flex: 0 0 calc(33.333% - 40px); /* No grow, no shrink, basis with space for margin */
-  height: 40vh; /* Example fixed height */
-  width: 30vh; /* Example fixed width */
-  max-width: 300px; /* Example max width */
-  max-height: 300px; /* Example max height */
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* Align content to the start */
@@ -78,6 +76,9 @@ p {
   overflow: hidden;
   text-decoration: none;
   color: inherit;
+  opacity: 0; /* Start elements as invisible */
+  animation: fadeInUp 1s ease-out forwards;
+  
 }
 
 .project-background {
@@ -180,6 +181,49 @@ a {
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
   }
   50% {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start the element 20px down from its final position */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at the element's final position */
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes lightningStrike {
+  0%, 100% {
+    color: inherit; /* Original color */
+    transform: skew(0deg, 0deg);
+    filter: brightness(100%);
+  }
+  50% {
+    color: yellow; /* Lightning color */
+    transform: skew(10deg, 0deg);
+    filter: brightness(200%);
+  }
+}
+
+.letter {
+  display: inline-block;
+  
 }
