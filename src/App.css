@@ -61,6 +61,7 @@ p {
 }
 
 .project {
+
   border-radius: 5px;
   border: 1px solid white;
   padding: 20px;
@@ -85,7 +86,7 @@ p {
   width: 100%; /* Full width of the parent container */
   height: 100%; /* Full height of the parent container */
   object-fit: contain; /* Ensures the image fits within the container */
-  position: absolute; /* Absolutely position within the .project div */
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 0; /* Behind the content */
@@ -93,7 +94,7 @@ p {
 
 .project-content {
   position: relative;
-  z-index: 1; /* In front of the background */
+  z-index: 1;
 }
 
 .project:hover {
@@ -197,31 +198,7 @@ a {
 }
 
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 
-
-@keyframes lightningStrike {
-  0%, 100% {
-    color: inherit; /* Original color */
-    transform: skew(0deg, 0deg);
-    filter: brightness(100%);
-  }
-  50% {
-    color: yellow; /* Lightning color */
-    transform: skew(10deg, 0deg);
-    filter: brightness(200%);
-  }
-}
 
 .letter {
   display: inline-block;
