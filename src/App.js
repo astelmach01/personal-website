@@ -3,10 +3,10 @@ import "./App.css";
 import "normalize.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
+import { useSpring, animated } from "react-spring";
 import Experience from "./experience";
-import { useSpring, animated, config } from "react-spring";
+import Education from "./education";
 
-// Define your projects here. Include name, description, and background image.
 const projects = [
   {
     name: "tinylang",
@@ -33,8 +33,8 @@ function AnimatedLetter({ char, delay }) {
     loop: { reverse: true },
     from: {
       transform: "translateY(0px)",
-      color: "#0f0", // Glowing green color
-      textShadow: `0 0 8px #0f0, 0 0 16px #0f0`, // Soft glow
+      color: "#0f0",
+      textShadow: "0 0 8px #0f0, 0 0 16px #0f0",
     },
     to: {
       transform: "translateY(-10px)",
@@ -59,10 +59,9 @@ function AnimatedName({ name }) {
   return (
     <h1 style={containerStyle}>
       {name.split("").map((char, index) => {
-        // If the character is a space, return a non-breaking space within the span
         if (char === " ") {
           return (
-            <span key={index} style={{ whiteSpace: 'pre-wrap' }}>
+            <span key={index} style={{ whiteSpace: "pre-wrap" }}>
               &nbsp;
             </span>
           );
@@ -72,7 +71,6 @@ function AnimatedName({ name }) {
     </h1>
   );
 }
-
 
 function App() {
   return (
@@ -85,7 +83,7 @@ function App() {
             className="headshot"
           />
           <AnimatedName name="Andrew Stelmach" />
-          <p>Northeastern University - B.S. in Computer Science</p>
+          {/* <Education /> */}
           <Experience />
         </div>
       </header>
@@ -106,11 +104,11 @@ function App() {
             "i am driven by curiosity",
             3000,
           ]}
-          speed={45} // Typing speed
+          speed={45}
           deletionSpeed={80}
           style={{ fontSize: "1.5em" }}
           wrapper="div"
-          repeat={Infinity} // Repeat this animation
+          repeat={Infinity}
         />
       </div>
       <main>

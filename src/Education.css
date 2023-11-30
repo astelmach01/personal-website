@@ -1,0 +1,24 @@
+.education {
+  color: #aaa; /* Soft white text color for better readability */
+  text-align: center; /* Keep the text center-aligned */
+  max-width: 800px; /* Set a max-width for the education container */
+  margin: 1rem auto; /* Center the container with automatic margins and add spacing from other elements */
+}
+
+.degree {
+  font-size: 2.5rem; /* Increase the font size for the degree to make it stand out more */
+  font-weight: 600; /* Semi-bold font weight for a more modern look */
+  margin: 0.5rem 0; /* Add a little space above and below the degree */
+}
+
+.specialization {
+  font-size: 1.8rem; /* Increase the font size slightly for readability */
+  font-style: italic; /* Keep italic for emphasis */
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Add a subtle glow effect */
+}
+
+.institution {
+  font-size: 1.5rem; /* A slightly larger font size for the institution for balance */
+  font-weight: 400; /* Regular font weight for a clean look */
+  margin-top: 1rem; /* More spacing above the institution name to separate it from the specialization */
+}

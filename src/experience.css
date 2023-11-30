@@ -6,7 +6,7 @@
 
 .position-title {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .company-list {
@@ -16,7 +16,7 @@
 
 .company-list li {
   margin-bottom: 0.3rem; /* Space between company names */
-  font-size: 1rem;
+  font-size: 1.5rem;
   /* Optional: Use ::before to create custom bullets */
   position: relative;
 }
