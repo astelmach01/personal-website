@@ -9,35 +9,37 @@ body {
   min-height: 100vh;
 }
 
-
 @keyframes glow-and-expand {
   0%,
   100% {
     text-shadow: none;
-    margin-left: 0;
-    margin-right: 0;
   }
   50% {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
-    margin-left: 20px;
-    margin-right: 20px;
+    text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF, 0 0 40px #FF00FF;
   }
 }
 
+h1:hover span {
+  color: #fff;
+  text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF, 0 0 40px #FF00FF;
+}
+
+
 h1 {
-  color: hsl(0, 0%, 28%);
+  /* Lightened the color */
+  color: hsl(0, 0%, 88%);
   font-size: 50px;
   font-weight: bold;
   font-family: monospace;
   letter-spacing: 7px;
   cursor: pointer;
-  animation: glow-and-expand 2s ease-in-out alternate; /* Apply the animation */
+  animation: glow-and-expand 2s ease-in-out alternate;
 }
 
 h1 span {
-  display: inline-block; /* Make span able to accept transform and margins for animation */
+  display: inline-block;
   transition: 0.5s ease-out;
-  animation: glow-and-expand 2s ease-in-out alternate; /* Apply the animation to each span */
+  animation: glow-and-expand 2s ease-in-out alternate;
 }
 
 h1:hover span:nth-child(1) {
@@ -46,8 +48,9 @@ h1:hover span:nth-child(1) {
 }
 
 h1:hover span {
+  /* Adjusted hover color and glow */
   color: #fff;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+  text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF, 0 0 40px #FF00FF;
   margin-left: 20px;
   margin-right: 20px;
 }
