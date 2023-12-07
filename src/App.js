@@ -3,9 +3,8 @@ import "./App.css";
 import "normalize.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
-import { useSpring, animated } from "react-spring";
 import Experience from "./experience";
-import Education from "./education";
+import Animation from "./animation";
 
 const projects = [
   {
@@ -28,50 +27,6 @@ const projects = [
   },
 ];
 
-function AnimatedLetter({ char, delay }) {
-  const styles = useSpring({
-    loop: { reverse: true },
-    from: {
-      transform: "translateY(0px)",
-      color: "#0f0",
-      textShadow: "0 0 8px #0f0, 0 0 16px #0f0",
-    },
-    to: {
-      transform: "translateY(-10px)",
-    },
-    config: { duration: 2000 },
-    delay,
-  });
-
-  return <animated.span style={styles}>{char}</animated.span>;
-}
-
-function AnimatedName({ name }) {
-  const containerStyle = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    fontSize: "3rem",
-    fontWeight: "bold",
-    fontFamily: 'Consolas, "Courier New", monospace',
-  };
-
-  return (
-    <h1 style={containerStyle}>
-      {name.split("").map((char, index) => {
-        if (char === " ") {
-          return (
-            <span key={index} style={{ whiteSpace: "pre-wrap" }}>
-              &nbsp;
-            </span>
-          );
-        }
-        return <AnimatedLetter char={char} key={index} delay={index * 100} />;
-      })}
-    </h1>
-  );
-}
-
 function App() {
   return (
     <div className="App">
@@ -82,7 +37,7 @@ function App() {
             alt="Headshot"
             className="headshot"
           />
-          <AnimatedName name="Andrew Stelmach" />
+          <Animation />
           {/* <Education /> */}
           <Experience />
         </div>
@@ -96,8 +51,6 @@ function App() {
             "i am a mathematician",
             3000,
             "i am a creator of intelligent solutions",
-            3000,
-            "i am committed to helping others with technology",
             3000,
             "i am advancing the field of AI research",
             3000,
