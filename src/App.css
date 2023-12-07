@@ -16,9 +16,8 @@ body {
   color: white;
   padding: 20px; /* Add some padding around */
   box-sizing: border-box; /* Include padding in width and height calculations */
-  overflow: hidden;
-
 }
+
 
 .headshot {
   width: 150px; /* Adjust size as needed */
@@ -32,7 +31,9 @@ h1 {
   font-size: 5rem; /* Adjust the size as needed */
   margin: 0;
   padding: 0;
-  }
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: shadow-move 1s linear infinite alternate;
+}
 
 p {
   font-size: 1.5rem; /* Adjust the size as needed */
@@ -42,26 +43,13 @@ p {
   margin-top: 0.5rem;
 }
 
-
-.App-header, main, footer {
+.App-header,
+main,
+footer {
   flex: 1; /* Distribute space evenly */
 }
 
-.project-container {
-  display: flex;
-  justify-content: center; /* Centers projects horizontally */
-  align-items: flex-start; /* Aligns projects to the top */
-  flex-wrap: wrap; /* Allows wrapping if there's not enough space */
-  gap: 20px; /* Space between projects */
-  width: 100%;
-  max-width: 1200px; /* Maximum width of container */
-  padding: 0; /* Removes padding that could affect alignment */
-  margin-bottom: 2rem;
-  list-style: none; /* In case you decide to use a list */
-}
-
 .project {
-
   border-radius: 5px;
   border: 1px solid white;
   padding: 20px;
@@ -79,8 +67,21 @@ p {
   color: inherit;
   opacity: 0; /* Start elements as invisible */
   animation: fadeInUp 1s ease-out forwards;
-  
 }
+
+.project-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 2rem;
+  list-style: none;
+}
+
 
 .project-background {
   width: 100%; /* Full width of the parent container */
@@ -95,6 +96,10 @@ p {
 .project-content {
   position: relative;
   z-index: 1;
+  white-space: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .project:hover {
@@ -105,6 +110,18 @@ p {
 .project h2 {
   font-size: 1.5rem; /* or your desired size for the title */
   margin-bottom: 0.5rem; /* Adds some space between the title and blurb */
+}
+
+.project-content h2 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-content p {
+  font-size: 1rem; /* Reduce subtext size for smaller screens */
+  margin-top: 0.5rem; /* Add some space between title and subtext */
+  line-height: 1.5rem;
 }
 
 .project p {
@@ -121,6 +138,7 @@ footer {
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
+
 }
 
 a {
@@ -170,26 +188,30 @@ a {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .project-container {
-    margin-bottom: 100px; /* Adjust this value based on the size of your footer */
+@media only screen and (max-width: 768px) {
+  html,
+  body {
+    overflow: auto; /* Re-enable scrolling for mobile*/
   }
 }
 
-@keyframes pulseGlow {
-  0%,
-  100% {
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+@keyframes shadow-move {
+  from {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
-  50% {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  to {
+    text-shadow: 0 5px 4px rgba(0, 0, 0, 0.2); 
   }
 }
+
+
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px); /* Start the element 20px down from its final position */
+    transform: translateY(
+      20px
+    ); /* Start the element 20px down from its final position */
   }
   to {
     opacity: 1;
@@ -197,10 +219,25 @@ a {
   }
 }
 
-
-
-
 .letter {
   display: inline-block;
-  
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+  .project {
+    flex-basis: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .project {
+    flex-basis: 100%;
+  }
+
+  .project-content a {
+    position: static;
+    bottom: 0;
+    display: block;
+    margin: 0 10px;
+  }
 }
