@@ -8,6 +8,12 @@ import Animation from "./animation";
 
 const projects = [
   {
+    name: "llama2d",
+    description: "fine-tuned for the web",
+    bgImage: "llama2d.png",
+    link: "https://github.com/Llama2D/llama2d",
+  },
+  {
     name: "tinylang",
     description: "a simpler langchain",
     bgImage: "tinylang.png",
@@ -81,9 +87,10 @@ function App() {
                 src={process.env.PUBLIC_URL + "/" + project.bgImage}
                 alt={project.name}
                 className="project-background"
+                style={{ display: "block", margin: "0 auto" }}
               />
               <div className="project-content">
-                <h2>{project.name}</h2>
+                <h2 style={{ fontSize: "1.1em" }}>{project.name}</h2>
                 <p>{project.description}</p>
               </div>
             </a>
