@@ -6,8 +6,3 @@ body {
   color: white;
 }
 
-html, body {
-  overflow: hidden; /* This will disable scrolling */
-
-}
-

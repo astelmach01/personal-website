@@ -4,7 +4,7 @@ import "./experience.css";
 const positions = [
   {
     title: "Data Scientist",
-    companies: ["Genentech", "Tive Inc."],
+    companies: ["Inferred Mind", "Genentech", "Tive Inc."],
   },
 ];
 
